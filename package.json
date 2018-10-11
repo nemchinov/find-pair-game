@@ -1,0 +1,22 @@
+{
+  "name": "find-pair-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nemchinov/find-pair-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nemchinov/find-pair-game/issues"
+  },
+  "homepage": "https://github.com/nemchinov/find-pair-game#readme",
+  "devDependencies": {
+    "simple-server": "^1.1.1"
+  }
+}
