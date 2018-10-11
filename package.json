@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "simple-server public 15100",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
