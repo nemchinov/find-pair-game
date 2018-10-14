@@ -98,10 +98,69 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\n    background-color: green; \n    color: white;\n}", ""]);
+exports.push([module.i, "body {\n    background-image: linear-gradient(to bottom right, #10754d, #00ff88);\n    margin: 0;\n}\n\n#root {\n   width: 100vw;\n   height: 100vh; \n\n}\n\n#root, .start-page {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n.app-box {\n    width: 95vw;\n    height: 95vh;\n}\n\n.start-page {\n    z-index: 3;\n}\n\n.start-page__submit {\n    font-size: xx-large;\n\tpadding: 10px 40px 10px 40px;\n\tbackground-color: #10a252;\n    border-radius: 5px;\n}\n\n.start-page, .cards {\n    position: absolute;\n    width: 95vw;\n    height: 95vh;\n    border: white solid 2px;\n    border-radius: 5px;\n}\n\n.cards {\n\tvisibility: hidden;\n    z-index: 4;\n}\n\n.slideUp {\n    display: none;\n}\n\n.slideDown{\n\tanimation-name: slideDown;\n\t-webkit-animation-name: slideDown;\t\n\n    animation-duration: 1s;\t\n\t-webkit-animation-duration: 1s;\n\n\tanimation-timing-function: ease;\t\n\t-webkit-animation-timing-function: ease;\t\n\n\tvisibility: visible !important;\t\t\t\t\t\t\n}\n\n@keyframes slideDown {\n\t0% {\n\t\ttransform: translateY(-100%);\n\t}\n\t/* 50%{\n\t\ttransform: translateY(8%);\n\t}\n\t65%{\n\t\ttransform: translateY(-4%);\n\t}\n\t80%{\n\t\ttransform: translateY(4%);\n\t}\n\t95%{\n\t\ttransform: translateY(-2%);\n\t}\t\t\t */\n\t100% {\n\t\ttransform: translateY(0%);\n\t}\t\t\n}\n\n@-webkit-keyframes slideDown {\n\t0% {\n\t\t-webkit-transform: translateY(-100%);\n\t}\n\t/* 50%{\n\t\t-webkit-transform: translateY(8%);\n\t}\n\t65%{\n\t\t-webkit-transform: translateY(-4%);\n\t}\n\t80%{\n\t\t-webkit-transform: translateY(4%);\n\t}\n\t95%{\n\t\t-webkit-transform: translateY(-2%);\n\t}\t\t\t */\n\t100% {\n        -webkit-transform: translateY(0%);\n\t}\t\n}", ""]);
 
 // exports
+exports.locals = {
+	"root": "root",
+	"start-page": "start-page",
+	"app-box": "app-box",
+	"start-page__submit": "start-page__submit",
+	"cards": "cards",
+	"slideUp": "slideUp",
+	"slideDown": "slideDown"
+};
 
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./src/js/components/card/index.css":
+/*!****************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6!./src/js/components/card/index.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card-box {\n    display: flex;\n    justify-content: flex-start;\n    align-items: flex-start;\n}\n\n.card-box .memory-card {\n    width: 100%;\n    height: 100%;\n    border-radius: 5px;\n    position: relative;\n    box-shadow: 5px 5px 7px rgba(0,0,0,.3);\n    transform-style: preserve-3d;\n    transform: scale(1);\n    transition: transform .5s;\n}\n\n.card-box .memory-card:active {\n    transform: scale(0.97);\n    transition: transform .2s;\n}\n\n.memory-card.flip {\n    transform: rotateY(180deg);\n}\n\n.card-box .front-face, .card-box  .back-face {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    border-radius: 5px;\n    background:#008071;\n    backface-visibility: hidden;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: 75% 75%;\n}\n\n.front-face {\n  transform: rotateY(180deg);\n}", ""]);
+
+// exports
+exports.locals = {
+	"card-box": "card-box",
+	"memory-card": "memory-card",
+	"flip": "flip",
+	"front-face": "front-face",
+	"back-face": "back-face"
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./src/js/components/cards/index.css":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6!./src/js/components/cards/index.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".cards-box {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n}\n\n.cards-box__control {\n    height: 10%;\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n}\n\n.cards-box__control-time {\n    grid-column-start: 2;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.cards-box__control-close {\n    display: flex;\n    align-items: center;\n    justify-content: flex-end;\n}\n\n.cards-box__control-close > button {\n    margin-right: 20px;\n    height: 30px;\n    background-color: transparent;\n    border-radius: 5px;\n}\n\n.cards-box__container {\n    height: 100%;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-template-rows: repeat(3, 1fr);\n    grid-row-gap: 10px;\n    grid-column-gap: 20px;\n    padding: 20px;\n    perspective: 1000px;\n}\n\n.cards-box__success {\n    position: absolute;\n    height: 200px;\n    width: 300px;\n    background-color: #10a252;\n    top: 35vh;\n    left: 35vw;\n    border-color: white;\n    border-width: 2px;\n    border-style: solid;\n    border-radius: 5px;\n    padding: 30px;\n    display: grid;\n    grid-template-rows: repeat(3, 1fr);\n    justify-content: center;\n    font-size: 20px;\n}\n\n.cards-box__success button {\n    background-color: #00b967;\n    border-radius: 5px;\n    font-size: 17px;\n}", ""]);
+
+// exports
+exports.locals = {
+	"cards-box": "cards-box",
+	"cards-box__control": "cards-box__control",
+	"cards-box__control-time": "cards-box__control-time",
+	"cards-box__control-close": "cards-box__control-close",
+	"cards-box__container": "cards-box__container",
+	"cards-box__success": "cards-box__success"
+};
 
 /***/ }),
 
@@ -417,6 +476,100 @@ module.exports = checkPropTypes;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-autobind/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/react-autobind/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib/autoBind */ "./node_modules/react-autobind/lib/autoBind.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/react-autobind/lib/autoBind.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-autobind/lib/autoBind.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = autoBind;
+var wontBind = ['constructor', 'render', 'componentWillMount', 'componentDidMount', 'componentWillReceiveProps', 'shouldComponentUpdate', 'componentWillUpdate', 'componentDidUpdate', 'componentWillUnmount'];
+
+var toBind = [];
+
+function autoBind(context) {
+  if (context === undefined) {
+    console.error('Autobind error: No context provided.');
+    return;
+  }
+
+  var objPrototype = Object.getPrototypeOf(context);
+
+  if (arguments.length > 1) {
+    // If a list of methods to bind is provided, use it.
+    toBind = Array.prototype.slice.call(arguments, 1);
+  } else {
+    // If no list of methods to bind is provided, bind all available methods in class.
+    toBind = Object.getOwnPropertyNames(objPrototype);
+  }
+
+  toBind.forEach(function (method) {
+    var descriptor = Object.getOwnPropertyDescriptor(objPrototype, method);
+
+    if (descriptor === undefined) {
+      console.warn('Autobind: "' + method + '" method not found in class.');
+      return;
+    }
+
+    // Return if it's special case function or if not a function at all
+    if (wontBind.indexOf(method) !== -1 || typeof descriptor.value !== 'function') {
+      return;
+    }
+
+    Object.defineProperty(objPrototype, method, boundMethod(objPrototype, method, descriptor));
+  });
+}
+
+/**
+* From autobind-decorator (https://github.com/andreypopp/autobind-decorator/tree/master)
+* Return a descriptor removing the value and returning a getter
+* The getter will return a .bind version of the function
+* and memoize the result against a symbol on the instance
+*/
+function boundMethod(objPrototype, method, descriptor) {
+  var fn = descriptor.value;
+
+  return {
+    configurable: true,
+    get: function get() {
+      if (this === objPrototype || this.hasOwnProperty(method)) {
+        return fn;
+      }
+
+      var boundFn = fn.bind(this);
+      Object.defineProperty(this, method, {
+        value: boundFn,
+        configurable: true,
+        writable: true
+      });
+      return boundFn;
+    }
+  };
+}
+module.exports = exports['default'];
 
 
 /***/ }),
@@ -21926,7 +22079,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_app_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
- // require("!style!css!css/app.css")
 
 
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_js_components_main_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById("root"));
@@ -21963,6 +22115,351 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/js/components/card/index.css":
+/*!******************************************!*\
+  !*** ./src/js/components/card/index.css ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6!./index.css */ "./node_modules/css-loader/index.js?!./src/js/components/card/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/js/components/card/index.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/card/index.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-autobind */ "./node_modules/react-autobind/index.js");
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autobind__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/js/components/card/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+
+var Card =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Card, _Component);
+
+  function Card() {
+    var _this;
+
+    _classCallCheck(this, Card);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this));
+    react_autobind__WEBPACK_IMPORTED_MODULE_1___default()(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(Card, [{
+    key: "flip",
+    value: function flip(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (this.props.blocked) {
+        return;
+      }
+
+      this.props.click(this.props.name);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var name = this.props.name || 'default',
+          img = "img/".concat(name, ".svg"),
+          cardClass = 'memory-card';
+
+      if (this.props.flip) {
+        cardClass += ' flip';
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: cardClass,
+        onClick: this.flip
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "front-face",
+        style: {
+          backgroundImage: "url(".concat(img, ")")
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "back-face",
+        style: {
+          backgroundImage: "url('img/default.svg')"
+        }
+      })));
+    }
+  }]);
+
+  return Card;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Card);
+
+/***/ }),
+
+/***/ "./src/js/components/cards/index.css":
+/*!*******************************************!*\
+  !*** ./src/js/components/cards/index.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6!./index.css */ "./node_modules/css-loader/index.js?!./src/js/components/cards/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/js/components/cards/index.js":
+/*!******************************************!*\
+  !*** ./src/js/components/cards/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-autobind */ "./node_modules/react-autobind/index.js");
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autobind__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../card */ "./src/js/components/card/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/js/components/cards/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+
+
+var Cards =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Cards, _Component);
+
+  function Cards() {
+    var _this;
+
+    _classCallCheck(this, Cards);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Cards).call(this));
+    react_autobind__WEBPACK_IMPORTED_MODULE_1___default()(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.state = {
+      start: new Date().getTime(),
+      time: 0,
+      selected: [],
+      blocked: false,
+      cancelFlip: true,
+      finded: [],
+      showModal: false
+    };
+    _this.ROWS = 3;
+    _this.COLUMNS = 4;
+    _this.default_names = ['angular', 'aurelia', 'backbone', 'ember', 'react', 'vue'];
+    _this.names = _this.default_names.concat(_this.default_names).sort(function (a, b) {
+      return Math.random() - 0.5;
+    });
+    return _this;
+  }
+
+  _createClass(Cards, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.timer = setInterval(this.tick, 500);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(this.timer);
+    }
+  }, {
+    key: "tick",
+    value: function tick() {
+      this.setState({
+        time: Math.round((new Date() - this.state.start) / 1000)
+      });
+    }
+  }, {
+    key: "close",
+    value: function close(e) {
+      e.preventDefault();
+      this.props.hide();
+    }
+  }, {
+    key: "cardClick",
+    value: function cardClick(index, name) {
+      var _this2 = this;
+
+      var _this$state = this.state,
+          selected = _this$state.selected,
+          finded = _this$state.finded;
+
+      if (!selected.length) {
+        this.setState({
+          selected: [index],
+          blocked: false
+        });
+      } else if (this.names[selected[0]] === name) {
+        var show = false;
+        finded.push(name);
+
+        if (finded.length === this.default_names.length) {
+          clearInterval(this.timer);
+          show = true;
+        }
+
+        this.setState({
+          selected: [],
+          blocked: false,
+          showModal: show,
+          finded: finded
+        });
+      } else {
+        selected.push(index);
+        this.setState({
+          blocked: true,
+          selected: selected
+        });
+        setTimeout(function () {
+          _this2.setState({
+            selected: [],
+            blocked: false
+          });
+        }, 1000);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var state = this.state;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box__control"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box__control-time"
+      }, state.time, " seconds"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box__control-close"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.close
+      }, "Finish"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box__container"
+      }, _toConsumableArray(Array(this.ROWS * this.COLUMNS)).map(function (_, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: i,
+          name: _this3.names[i],
+          click: _this3.cardClick.bind(_this3, i),
+          blocked: state.blocked || state.selected.indexOf(i) >= 0 || state.finded.indexOf(_this3.names[i]) >= 0,
+          flip: state.selected.indexOf(i) >= 0 || state.finded.indexOf(_this3.names[i]) >= 0
+        });
+      })), state.showModal ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cards-box__success"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Congratulations on winning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Your time is ", state.time, " seconds"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.close
+      }, "Finish")) : '');
+    }
+  }]);
+
+  return Cards;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Cards);
+
+/***/ }),
+
 /***/ "./src/js/components/main.js":
 /*!***********************************!*\
   !*** ./src/js/components/main.js ***!
@@ -21974,8 +22471,9 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-autobind */ "./node_modules/react-autobind/index.js");
+/* harmony import */ var react_autobind__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autobind__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cards */ "./src/js/components/cards/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21986,13 +22484,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -22008,14 +22507,55 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this));
-    _this.state = {};
+    react_autobind__WEBPACK_IMPORTED_MODULE_1___default()(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.state = {
+      showCards: false
+    };
     return _this;
   }
 
   _createClass(App, [{
+    key: "showCards",
+    value: function showCards(e) {
+      e.preventDefault();
+      this.setState({
+        showCards: true
+      });
+    }
+  }, {
+    key: "hideCards",
+    value: function hideCards() {
+      this.setState({
+        showCards: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test");
+      var cardsClass = 'cards',
+          startClass = 'start-page',
+          show = this.state.showCards;
+
+      if (show) {
+        cardsClass += ' slideDown';
+        startClass += ' slideUp';
+      } else {
+        cardsClass += ' slideUp';
+        startClass += ' slideDown';
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-box"
+      }, show ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: cardsClass
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        hide: this.hideCards
+      })) : '', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: startClass
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "start-page__submit",
+        onClick: this.showCards
+      }, "Start")));
     }
   }]);
 

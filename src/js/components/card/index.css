@@ -1,0 +1,41 @@
+.card-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.card-box .memory-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 5px 5px 7px rgba(0,0,0,.3);
+    transform-style: preserve-3d;
+    transform: scale(1);
+    transition: transform .5s;
+}
+
+.card-box .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-box .front-face, .card-box  .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background:#008071;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% 75%;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}

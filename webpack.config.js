@@ -17,7 +17,7 @@ module.exports = {
           exclude: /node_modules/,
           query: {
             modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
+            localIdentName: '[local]'
           }
         }
       ]

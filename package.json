@@ -28,6 +28,7 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
     "react": "^16.5.2",
+    "react-autobind": "^1.0.6",
     "react-dom": "^16.5.2",
     "simple-server": "^1.1.1",
     "style-loader": "^0.23.1",
